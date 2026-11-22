@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>App di GabrasLepras</title>
+<style>
+  body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:640px;margin:0 auto;padding:24px;background:#eef5fd;color:#0f2942}
+  h1{font-size:22px;margin:0 0 4px} p{line-height:1.5}
+  .card{background:#fff;border:1px solid #b9d3ee;border-radius:12px;padding:16px;margin:14px 0}
+  a.btn{display:inline-block;background:#1d4ed8;color:#fff;text-decoration:none;padding:10px 16px;border-radius:10px;font-weight:600}
+  small{color:#5c768d}
+</style>
+</head>
+<body>
+  <h1>App di GabrasLepras</h1>
+  <p><small>Pagina di distribuzione delle app personali. Gli aggiornamenti arrivano anche dal pulsante "Controlla aggiornamenti" dentro le app.</small></p>
+  <div class="card">
+    <b>💬 MSN Colleghi P2P</b> <span id="msnv"></span>
+    <p>Chat tra colleghi: da vicino via Nearby (senza internet), da lontano con il Wi-Fi Casa. Messaggi cifrati end-to-end.</p>
+    <a class="btn" href="msn/MSN_Colleghi_P2P.apk">Scarica l'APK</a>
+    <p><small>Per usarla con un collega dovete incontrarvi una volta di persona con l'app aperta.</small></p>
+  </div>
+  <p><small>App sviluppata da: <b>GabrasLepras</b></small></p>
+  <script>
+    fetch('msn/version.json').then(r => r.json()).then(j => { document.getElementById('msnv').textContent = '· versione ' + j.versionName; }).catch(() => {});
+  </script>
+</body>
+</html>
